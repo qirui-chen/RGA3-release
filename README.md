@@ -24,11 +24,7 @@ pip install ninja
 pip install flash-attn --no-build-isolation
 ```
 
-Then you need to install the [SAM2](https://github.com/facebookresearch/sam2?tab=readme-ov-file#installation) package. In our implementation, the version of core packages are as follows:
-```bash 
-torch==2.5.1+cu124
-flash_attn==2.7.4post1
-```
+Then you need to install the [SAM2](https://github.com/facebookresearch/sam2?tab=readme-ov-file#installation) package. In our implementation, the version of core packages are `torch==2.5.1+cu124`, `flash_attn==2.7.4post1`.
 
 Then, install the [CoTracker3](https://github.com/facebookresearch/co-tracker?tab=readme-ov-file#install-a-development-version) package. Afterwards, install the following packages.
 
