@@ -1,0 +1,67 @@
+SCRIPT="evaluation/refdavis/inference_davis.py"
+VERSION="SurplusDeficit/UniGR-3B"
+VIS_SAVE_PATH="results/RefDAVIS/${VERSION}/"
+
+
+NUM_FRMS_MLLM=8
+MAX_PIXELS=$((384*28*28))
+SUBSET_NUM=8
+
+# Step-1: run inference
+CUDA_VISIBLE_DEVICES=0 python $SCRIPT \
+  --subset_idx=0 \
+  --version=$VERSION \
+  --vis_save_path=$VIS_SAVE_PATH \
+  --num_frames_mllm=$NUM_FRMS_MLLM \
+  --max_pixels=$MAX_PIXELS \
+  --subset_num=$SUBSET_NUM &
+CUDA_VISIBLE_DEVICES=1 python $SCRIPT \
+  --subset_idx=1 \
+  --version=$VERSION \
+  --vis_save_path=$VIS_SAVE_PATH \
+  --num_frames_mllm=$NUM_FRMS_MLLM \
+  --max_pixels=$MAX_PIXELS \
+  --subset_num=$SUBSET_NUM &
+CUDA_VISIBLE_DEVICES=2 python $SCRIPT \
+  --subset_idx=2 \
+  --version=$VERSION \
+  --vis_save_path=$VIS_SAVE_PATH \
+  --num_frames_mllm=$NUM_FRMS_MLLM \
+  --max_pixels=$MAX_PIXELS \
+  --subset_num=$SUBSET_NUM &
+CUDA_VISIBLE_DEVICES=3 python $SCRIPT \
+  --subset_idx=3 \
+  --version=$VERSION \
+  --vis_save_path=$VIS_SAVE_PATH \
+  --num_frames_mllm=$NUM_FRMS_MLLM \
+  --max_pixels=$MAX_PIXELS \
+  --subset_num=$SUBSET_NUM &
+CUDA_VISIBLE_DEVICES=4 python $SCRIPT \
+  --subset_idx=4 \
+  --version=$VERSION \
+  --vis_save_path=$VIS_SAVE_PATH \
+  --num_frames_mllm=$NUM_FRMS_MLLM \
+  --max_pixels=$MAX_PIXELS \
+  --subset_num=$SUBSET_NUM &
+CUDA_VISIBLE_DEVICES=5 python $SCRIPT \
+  --subset_idx=5 \
+  --version=$VERSION \
+  --vis_save_path=$VIS_SAVE_PATH \
+  --num_frames_mllm=$NUM_FRMS_MLLM \
+  --max_pixels=$MAX_PIXELS \
+  --subset_num=$SUBSET_NUM &
+CUDA_VISIBLE_DEVICES=6 python $SCRIPT \
+  --subset_idx=6 \
+  --version=$VERSION \
+  --vis_save_path=$VIS_SAVE_PATH \
+  --num_frames_mllm=$NUM_FRMS_MLLM \
+  --max_pixels=$MAX_PIXELS \
+  --subset_num=$SUBSET_NUM &
+CUDA_VISIBLE_DEVICES=7 python $SCRIPT \
+  --subset_idx=7 \
+  --version=$VERSION \
+  --vis_save_path=$VIS_SAVE_PATH \
+  --num_frames_mllm=$NUM_FRMS_MLLM \
+  --max_pixels=$MAX_PIXELS \
+  --subset_num=$SUBSET_NUM &
+
