@@ -1,0 +1,420 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <style type="text/css">
+        @font-face {
+            font-family: 'Avenir Book';
+            src: url("./fonts/Avenir_Book.ttf");
+            /* File to be stored at your site */
+        }
+
+        body {
+            font-family: "Avenir Book", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 800px;
+        }
+
+        h1 {
+            font-weight: 300;
+        }
+
+        h2 {
+            font-weight: 300;
+        }
+
+        p {
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        code {
+            font-size: 0.8rem;
+            margin: 0 0.2rem;
+            padding: 0.5rem 0.8rem;
+            white-space: nowrap;
+            background: #efefef;
+            border: 1px solid #d3d3d3;
+            color: #000000;
+            border-radius: 3px;
+        }
+
+        pre>code {
+            display: block;
+            white-space: pre;
+            line-height: 1.5;
+            padding: 0;
+            margin: 0;
+        }
+
+        pre.prettyprint>code {
+            border: none;
+        }
+
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .image {
+            flex-basis: 40%
+        }
+
+        .text {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .disclaimerbox {
+            background-color: #eee;
+            border: 1px solid #eeeeee;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            padding: 20px;
+        }
+
+        video.header-vid {
+            height: 140px;
+            border: 1px solid black;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+        img.header-img {
+            height: 140px;
+            border: 1px solid black;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+        img.rounded {
+            border: 0px solid #eeeeee;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+
+        }
+
+        a:link,
+        a:visited {
+            color: #1367a7;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #208799;
+        }
+
+        td.dl-link {
+            height: 160px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .layered-paper-big {
+            /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+            box-shadow:
+                0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The top layer shadow */
+                5px 5px 0 0px #fff,
+                /* The second layer */
+                5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The second layer shadow */
+                10px 10px 0 0px #fff,
+                /* The third layer */
+                10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The third layer shadow */
+                15px 15px 0 0px #fff,
+                /* The fourth layer */
+                15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The fourth layer shadow */
+                20px 20px 0 0px #fff,
+                /* The fifth layer */
+                20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The fifth layer shadow */
+                25px 25px 0 0px #fff,
+                /* The fifth layer */
+                25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+            /* The fifth layer shadow */
+            margin-left: 10px;
+            margin-right: 45px;
+        }
+
+
+        .layered-paper {
+            /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+            box-shadow:
+                0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The top layer shadow */
+                5px 5px 0 0px #fff,
+                /* The second layer */
+                5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The second layer shadow */
+                10px 10px 0 0px #fff,
+                /* The third layer */
+                10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+            /* The third layer shadow */
+            margin-top: 5px;
+            margin-left: 10px;
+            margin-right: 30px;
+            margin-bottom: 5px;
+        }
+
+        .vert-cent {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+    </style>
+    <title>Object-centric Video Question Answering with Visual Grounding and Referring </title>
+</head>
+
+        <br>
+        <center>
+            <span style="font-size:28px">Object-centric Video Question Answering with Visual Grounding and Referring</span><br><br><br>
+        </center>
+        <table align="center" cellpadding="0" cellspacing="0" width="700px">
+            <tbody>
+                <tr>
+                    <td align="center" width="130px" style="padding-right: 10px;">
+                        <center>
+                            <span style="font-size:16px"><a href="https://scholar.google.com/citations?user=WTZX3y8AAAAJ&hl=en&oi=ao">Haochen Wang</a><sup>1*</sup></span>
+                        </center>
+                    </td>
+                    <td align="center" width="130px" style="padding-right: 10px;">
+                        <center>
+                            <span style="font-size:16px"><a href="https://qirui-chen.github.io/">Qirui Chen</a><sup>2*</sup></span>
+                        </center>
+                    </td>
+                    <td align="center" width="90px" style="padding-right: 0px;">
+                        <center>
+                            <span style="font-size:16px">Cilin Yan<sup>3</sup></span>
+                        </center>
+                    </td>
+                    <td align="center" width="90px" style="padding-right: 0;">
+                        <center>
+                            <span style="font-size:16px">Jiayin Cai<sup>3</sup></span>
+                        </center>
+                    </td>
+                    <td align="center" width="130px" style="padding-right: 0px;">
+                        <center>
+                            <span style="font-size:16px">Xiaolong Jiang<sup>3</sup></span>
+                        </center>
+                    </td>
+                    <td align="center" width="70px" style="padding-right: 0px;">
+                        <center>
+                            <span style="font-size:16px">Yao Hu<sup>3</sup></span>
+                        </center>
+                    </td>
+                </tr>
+                <table align="center" cellpadding="0" cellspacing="10px">
+                    <tbody>
+                <tr>
+                    <td align="center" width="180px" style="padding-right: 0px;">
+                        <center>
+                            <span style="font-size:16px"><a href="https://weidixie.github.io/">Weidi Xie</a><sup>2†</sup></span>
+                        </center>
+                    </td>
+                    <td align="center" width="180px" style="padding-right: 0px;">
+                        <center>
+                            <span style="font-size:16px">Stratis Gavves<sup>1</sup></span>
+                        </center>
+                    </td>
+                </tr>
+                </tbody>
+                </table>
+            </tbody>
+        </table>
+        <br>
+        <table align="center" width="800px">
+            <tbody>
+                <tr>
+                    <td align="center" width="200px">
+                        <span style="font-size:16px"><sup>1</sup>University of Amsterdam</span>
+                    </td>
+                    <td align="center" width="400px">
+                        <span style="font-size:16px"><sup>2</sup>SAI, Shanghai Jiao Tong University</span>
+                    </td>
+                    <td align="center" width="200px">
+                        <span style="font-size:16px"><sup>3</sup>Xiaohongshu Inc.</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    <br>
+    <table align="center" width="600px">
+        <tbody>
+            <tr>
+                <td align="center" width="200px">
+                    <center>
+                        <br>
+                        <span style="font-size:20px">Code
+                            <a href="https://github.com/qirui-chen/RGA3-release"> [GitHub]</a>
+                        </span>
+                    </center>
+                </td>
+
+                <td align="center" width="200px">
+                    <center>
+                        <br>
+                        <span style="font-size:20px">Paper
+                            <a href=""> [arXiv]</a>
+                        </span>
+                    </center>
+                </td>
+
+                <td align="center" width="200px">
+                    <center>
+                        <br>
+                        <span style="font-size:20px">Cite
+                            <a href="./bibtex.txt"> [BibTeX]</a>
+                        </span>
+                    </center>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <center>
+        <h2> <b>Video Demo</b></h2>
+    </center>
+    <p style="text-align:justify; text-justify:inter-ideograph;">
+    <p>
+    <div style="text-align: center; margin: 30px 0;">
+        <video width="100%" controls style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <source src="./resources/demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div style="margin-top: 15px; font-style: italic; color: #555; font-size: 16px;">
+            Recommended watching in fullscreen.
+        </div>
+        <div style="margin-top: 14px; font-style: italic; color: #555; font-size: 14px; text-align: left;">
+            <br>
+            Query 1: [Red circle at Frame 16] Look at the masked region and answer the question: What is it?
+            <br> Answer 1: Sure, the item is a pillow.
+            <br>
+            <br>
+            Query 2: Can you segment the place where the cat stands in the video? 
+            <br> Answer 2: Sure, [SEG].
+        </div>
+    </div>
+    </p>
+
+    <br>
+    <hr>
+    <center>
+        <h2> Abstract </h2>
+    </center>
+    <p style="text-align:justify; text-justify:inter-ideograph;">
+        <left>
+            <p>
+                Video Large Language Models (<em>VideoLLMs</em>) have recently demonstrated remarkable progress in general video understanding. 
+                However, existing models primarily focus on high-level comprehension and are limited to text-only responses, restricting the flexibility for object-centric, multi-round interactions. 
+                In this paper, we make three contributions:
+                <ul>
+                    <li>We address these limitations by introducing a VideoLLM, termed as <b><u>RGA3</u></b>, 
+                    capable of performing both object referring for input and grounding for output in video reasoning tasks, i.e., 
+                    allowing users to interact with videos using both textual and visual information;</li>
+                    <li>We propose <b><u>STOM</u></b> (Spatial-Temporal Overlay Module), 
+                    a novel approach that propagates arbitrary visual prompts input at any single timestamp to the remaining frames within a video;</li>
+                    <li>We present <b><u>VideoInfer</u></b>, a manually curated object-centric video instruction dataset featuring question-answering pairs that require reasoning.</li>
+                </ul>
+                We conduct comprehensive experiments on VideoInfer and other existing benchmarks across video question answering and referring object segmentation. 
+                The results on 12 benchmarks spanning 6 tasks show that <b>RGA3</b> consistently outperforms baseline models in both video question answering and segmentation, underscoring its robustness in multimodal, object-centric video and image understanding.
+                </p>
+        </left>
+    </p>
+
+
+
+    <br>
+    <hr>
+    <center>
+        <h2> <b>Architecture Overview.</b> </h2>
+    </center>
+    <p style="text-align:justify; text-justify:inter-ideograph;">
+    <p>
+    <div style="text-align: center; margin-top: 25px;">
+        <img class="left" src="./resources/fig1.png" width="800px">
+    </div>
+    </p>
+    <p>
+        <left>
+            <br>
+            <b>The proposed RGA3 architecture overview.</b> (a) The <u>S</u>patial-<u>T</u>emporal <u>O</u>verlay <u>M</u>odule (STOM) is introduced to process arbitrary visual prompts (<i>e.g.</i>, <span style="color:DodgerBlue;">scribble</span>, <span style="color:DarkGreen;">ellipse</span>, <span style="color:DarkOrange;">arrow</span>, etc.) at any timestamp and propagate to all frames based on CoTracker3, allowing for interactive object-centric reasoning and continual visual attention. (b) A visual encoder is employed to extract video representations of overlaid frames processed through STOM. (c) A Large Language Model (LLM) takes the concatenated sequence of visual and text tokens as input and generates responses. (d) To facilitate reasoning-based video object segmentation, a SAM2 decoder is incorporated for generating segmentation masks when prompted with a <span style="color:CornflowerBlue; font-family:monospace; font-weight:bold;">[SEG]</span> token, extending RGA3's capabilities beyond text-only responses.
+        </left>
+    </p>
+
+    <br>
+    <br>
+    <hr>
+    <center>
+        <h2> <b>VideoInfer</b>: A Manually Curated Object-centric VideoQA Dataset </h2>
+    </center>
+    <p style="text-align:justify; text-justify:inter-ideograph;">
+    <left>
+        <br>
+        VideoInfer is a manually curated, object-centric video question-answering dataset, designed to challenge models with questions requiring semantic understanding, temporal reasoning, and multi-step inference over video content. 
+        Compared to existing object-level video question-answering datasets, which are often generated through automated pipelines, VideoInfer serves as a more rigorous benchmark for evaluating the reasoning capabilities of advanced Video LLMs.
+    </left>
+    <p><img class="left" src="./resources/fig2.png" width="800px" style="margin-top: 20px;"></p>
+    <br>
+    <br>
+    <hr>
+    <center>
+        <h2>Partial Results</h2>
+    </center>
+    <p style="text-align:justify; text-justify:inter-ideograph;">
+    <left>
+        <br>
+        We have conducted extensive comparisons between RGA3 and state-of-the-art methods across a variety of referring QA and object segmentation benchmarks both at image-level and video-level.
+    </left>
+    
+    <center>
+        <p><img class="center" src="./resources/results1.png" width="750px"
+                style="margin-top: 5px; margin-bottom: 25px"></p>
+        <p><img class="center" src="./resources/results2.png" width="750px"
+                style="margin-top: 0px; margin-bottom: -5px"></p>
+        <p><img class="center" src="./resources/results3.png" width="750px"
+                style="margin-top: 0px; margin-bottom: 15px"></p>
+        <!-- <br> -->
+    </center>
+    <p>
+        Overall, through extensive evaluations across VideoInfer as well as <b>11</b> existing benchmarks (the full lists are presented in the paper), we demonstrate the superior performance of RGA3 in both referring object-centric question-answering and segmentation tasks. 
+    </p>
+    <br><br><br>
+    <hr>
+    <center>
+        <h2> Acknowledgements </h2>
+    </center>
+    <p>
+        Based on a template by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a
+            href="http://richzhang.github.io/">Richard Zhang</a>.
+    </p>
+    <br>
+</body>
+
+</html>

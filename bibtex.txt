@@ -1,0 +1,6 @@
+@inproceedings{wang2025object,
+  title={Object-centric Video Question Answering with Visual Grounding and Referring},
+  author={Wang, Haochen and Chen, Qirui and Yan, Cilin and Cai, Jiayin and Jiang, Xiaolong and Hu, Yao and Xie, Weidi and Gavves, Stratis},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  year={2025}
+}
